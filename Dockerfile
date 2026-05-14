@@ -1,2 +1,6 @@
 FROM python:3.11-slim
-CMD ["python", "-c", "print('Hola mundo')"]
+WORKDIR /app
+COPY app.py .
+RUN pip install flask
+EXPOSE 8080
+CMD ["python", "app.py"]
